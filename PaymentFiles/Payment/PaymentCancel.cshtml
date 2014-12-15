@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "PaymentCancel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <div class="container">
+        <h3>Payment Failed</h3>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                 <table id="TableCustom" width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="title" colspan="4">
+                                        Tournament Format
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+											Your payment was successfull!
+                                            <br />
+                                            <br />
+                                            If you were trying to register for a tournament, your registration for the tournament has been accepted!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+        }
+    </div>
+

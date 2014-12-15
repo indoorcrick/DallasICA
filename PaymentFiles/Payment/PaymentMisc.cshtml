@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "PaymentMisc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="contact_area" style="min-height: 510px">
+
+    <div class="container">
+        <h3>Payment</h3>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <table id="Table1" width="90%" border="0" align="center" cellpadding="2" cellspacing="2">
+                    <tr>
+                        <td>
+                            <span><b>Note:</b></span>
+                            <br />
+                            <ul style="color: red">
+                                <li>Please verify the payment reason and amount with the DCL organizers before making any payment!
+                                </li>
+                                <li>Use this form to make a payment to DCL for Umpiring penalties, Ground Reservations etc.
+                                </li>
+                                <li>DO NOT use this form to pay TOURNAMENT REGISTRATION fees. Your team will not be registered for the tournament.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Package Details:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="width: 400px; border: 1px solid #808080; border-radius: 10px; background: #eae1e1; padding: 20px">
+                                
+                                <table width="100%">
+                                    <tr>
+                                        <td align="right"><span class="infoLabel">Package Name:</span>
+                                        </td>
+                                        <td style="padding-left: 20px">
+                                            @Session["PackageName"].ToString())
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><span class="infoLabel">Amount: ($) </span>
+                                        </td>
+                                        <td style="padding-left: 20px">
+                                            @Session["Price"].ToString()
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><span class="infoLabel">Description:</span>
+                                        </td>
+                                        <td style="padding-left: 20px">
+                                            @Session["PackageDesc"].ToString()
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="color:darkred">
+                        <td><br />
+                             <br />
+                            You will be taken to the secure PayPal website to complete the payment! 
+                            <br />
+                             <br />
+                            <input type="submit" value="Pay via PayPal" class="btn btn-default" />
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        }
+    </div>
+</div>
